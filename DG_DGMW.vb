@@ -1,4 +1,5 @@
-﻿Imports System.Reflection
+﻿Imports System.IO
+Imports System.Reflection
 Imports MySql.Data.MySqlClient
 
 Public Class DG_DGMW
@@ -59,13 +60,12 @@ Public Class DG_DGMW
 
             With SalesFileName
                 .SalesFileType = SalesFileTypeCls.SalesFormat.DailySales
+                Using addInfo = File.CreateText("c:\directory\textfile.txt" & .GenerateFileName)
+                    For Each str As String In GenerateDailySales()
+                        addInfo.WriteLine("5th line of some text")
+                    Next
+                End Using
             End With
-
-
-            GenerateDailySales()
-
-            FileNameGenerated = SalesFileName.GenerateFileName
-
 
         Catch ex As Exception
             MsgBox(ex.ToString)
