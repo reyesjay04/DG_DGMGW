@@ -1,9 +1,5 @@
 ﻿Public Class SalesFileTypeCls
     Property SalesFileType As New SalesFormat
-    Property RetailPartnerCode As String
-    Property RetailPartnerCodeLength As Integer
-    Property TerminalNumber As String
-    Property BatchNumber As String
     Enum SalesFormat
         DailySales
         HourlySales
@@ -28,9 +24,9 @@
         ' RetailPartnerCode.Substring(0, 2) = DG
         Dim strFormat As String = ""
         Try
-            strFormat = Me.RetailPartnerCode.Substring(0, Me.RetailPartnerCodeLength)
+            strFormat = RetailPartnerCode.Substring(0, RetailPartnerCodeLength)
         Catch ex As Exception
-            strFormat = Me.RetailPartnerCode
+            strFormat = RetailPartnerCode
         End Try
         Return strFormat
     End Function
