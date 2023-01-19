@@ -1,0 +1,12 @@
+C:\Users\tripo\Downloads\mworld\mworld\obj\Debug\DG_DGMW.vbproj.AssemblyReference.cache
+C:\Users\tripo\Downloads\mworld\mworld\obj\Debug\DG_DGMW.DG_DGMW.resources
+C:\Users\tripo\Downloads\mworld\mworld\obj\Debug\DG_DGMW.Resources.resources
+C:\Users\tripo\Downloads\mworld\mworld\obj\Debug\DG_DGMW.vbproj.GenerateResource.cache
+C:\Users\tripo\Downloads\mworld\mworld\obj\Debug\DG_DGMW.vbproj.CoreCompileInputs.cache
+C:\Users\tripo\Downloads\mworld\mworld\bin\Debug\DG_DGMW.exe.config
+C:\Users\tripo\Downloads\mworld\mworld\bin\Debug\DG_DGMW.exe
+C:\Users\tripo\Downloads\mworld\mworld\bin\Debug\DG_DGMW.pdb
+C:\Users\tripo\Downloads\mworld\mworld\bin\Debug\DG_DGMW.xml
+C:\Users\tripo\Downloads\mworld\mworld\obj\Debug\DG_DGMW.exe
+C:\Users\tripo\Downloads\mworld\mworld\obj\Debug\DG_DGMW.xml
+C:\Users\tripo\Downloads\mworld\mworld\obj\Debug\DG_DGMW.pdb
