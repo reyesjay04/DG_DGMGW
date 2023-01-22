@@ -22,7 +22,7 @@ Public Class SettingsCls
             RetailCode = ModPosCommon.GetItemValue("retail_partner_code", "0", ListOfMGWSettings)
             TerminalNo = ModPosCommon.GetItemValue("terminal_number", "0", ListOfMGWSettings)
 
-            Dim time_start = ModPosCommon.GetItemValue("business_hour_stsart", "10:00", ListOfMGWSettings)
+            Dim time_start = ModPosCommon.GetItemValue("business_hour_start", "10:00", ListOfMGWSettings)
             Dim time_end = ModPosCommon.GetItemValue("business_hour_end", "11:00", ListOfMGWSettings)
 
             Try

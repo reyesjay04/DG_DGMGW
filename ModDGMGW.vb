@@ -37,20 +37,20 @@ Module ModDGMGW
                                 .RetailPartnerCode = RetailPartnerCode
                                 .TerminalNumber = TerminalNumber
                                 .BaseDate = Format(_baseDate, Settings.BDFormat)
-                                .OldAccumulatedTotal = mReader("ZXAccumulatedGT")
+                                .OldAccumulatedTotal = mReader("ZXBegBalance")
                                 .TotalCashSales = mReader("ZXCashTotal") - mReader("ZXCashlessTotal")
                                 .TotalCreditDebitCardSales = mReader("ZXCreditCard") + mReader("ZXDebitCard")
                                 .TotalOtherPaymentSales = mReader("ZXCashlessTotal") + mReader("ZXGiftCardSum")
 
                                 .TotalNetSalesAmount = mReader("ZXNetSales")
-                                .NewAccumulatedTotal = mReader("ZXAccumulatedGT") + .TotalNetSalesAmount
+                                .NewAccumulatedTotal = mReader("ZXBegBalance") + .TotalNetSalesAmount
 
                                 .TotalNonTaxableSalesAmount = mReader("ZXVatExemptSales")
                                 .TotalSeniorAndPWDDiscount = mReader("ZXSeniorCitizen") + mReader("ZXPWD")
                                 .TotalOtherDiscountAndFreeItems = mReader("ZXTotalDiscounts") - .TotalSeniorAndPWDDiscount
 
                                 .TotalRefundAmount = mReader("ZXReturnsRefund")
-                                .TotalGrossSalesAmount = .TotalNetSalesAmount + .TotalSeniorAndPWDDiscount + .TotalOtherDiscountAndFreeItems + .TotalRefundAmount
+                                .TotalGrossSalesAmount = mReader("ZXGross")
 
                                 .TotalTaxVatAmount = mReader("ZXVatAmount")
                                 .TotalServiceChargeAmount = mReader("ZXRepExpense")
