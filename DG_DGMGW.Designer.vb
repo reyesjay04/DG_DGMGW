@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class DG_DGMW
+Partial Class DG_DGMGW
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -31,14 +31,23 @@ Partial Class DG_DGMW
         Me.btnHourly = New System.Windows.Forms.Button()
         Me.btnDaily = New System.Windows.Forms.Button()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.txtDateFormat = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.nudRetaillength = New System.Windows.Forms.NumericUpDown()
         Me.btnSave = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.dtpBDEnd = New System.Windows.Forms.DateTimePicker()
         Me.dtpBDStart = New System.Windows.Forms.DateTimePicker()
+        Me.txtRetailCode = New System.Windows.Forms.TextBox()
+        Me.txtTerminalNumber = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
+        CType(Me.nudRetaillength, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -138,6 +147,14 @@ Partial Class DG_DGMW
         '
         'TabPage2
         '
+        Me.TabPage2.Controls.Add(Me.Label8)
+        Me.TabPage2.Controls.Add(Me.Label7)
+        Me.TabPage2.Controls.Add(Me.txtTerminalNumber)
+        Me.TabPage2.Controls.Add(Me.txtRetailCode)
+        Me.TabPage2.Controls.Add(Me.Label6)
+        Me.TabPage2.Controls.Add(Me.txtDateFormat)
+        Me.TabPage2.Controls.Add(Me.Label5)
+        Me.TabPage2.Controls.Add(Me.nudRetaillength)
         Me.TabPage2.Controls.Add(Me.btnSave)
         Me.TabPage2.Controls.Add(Me.Label4)
         Me.TabPage2.Controls.Add(Me.Label3)
@@ -153,12 +170,48 @@ Partial Class DG_DGMW
         Me.TabPage2.Text = "Options"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(28, 64)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(86, 15)
+        Me.Label6.TabIndex = 8
+        Me.Label6.Text = "Date Format"
+        '
+        'txtDateFormat
+        '
+        Me.txtDateFormat.Location = New System.Drawing.Point(147, 61)
+        Me.txtDateFormat.Name = "txtDateFormat"
+        Me.txtDateFormat.Size = New System.Drawing.Size(199, 21)
+        Me.txtDateFormat.TabIndex = 7
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(28, 148)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(130, 15)
+        Me.Label5.TabIndex = 6
+        Me.Label5.Text = "Retail Code Length"
+        '
+        'nudRetaillength
+        '
+        Me.nudRetaillength.Location = New System.Drawing.Point(221, 142)
+        Me.nudRetaillength.Name = "nudRetaillength"
+        Me.nudRetaillength.Size = New System.Drawing.Size(125, 21)
+        Me.nudRetaillength.TabIndex = 5
+        '
         'btnSave
         '
-        Me.btnSave.Location = New System.Drawing.Point(32, 66)
+        Me.btnSave.Location = New System.Drawing.Point(31, 182)
         Me.btnSave.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(310, 36)
+        Me.btnSave.Size = New System.Drawing.Size(315, 36)
         Me.btnSave.TabIndex = 4
         Me.btnSave.Text = "Save"
         Me.btnSave.UseVisualStyleBackColor = True
@@ -167,7 +220,7 @@ Partial Class DG_DGMW
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(229, 28)
+        Me.Label4.Location = New System.Drawing.Point(236, 36)
         Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(23, 15)
@@ -178,7 +231,7 @@ Partial Class DG_DGMW
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(29, 28)
+        Me.Label3.Location = New System.Drawing.Point(28, 36)
         Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(107, 15)
@@ -188,9 +241,9 @@ Partial Class DG_DGMW
         'dtpBDEnd
         '
         Me.dtpBDEnd.CalendarFont = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dtpBDEnd.CustomFormat = "hh:mm tt"
+        Me.dtpBDEnd.CustomFormat = "hh:00 tt"
         Me.dtpBDEnd.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtpBDEnd.Location = New System.Drawing.Point(259, 26)
+        Me.dtpBDEnd.Location = New System.Drawing.Point(266, 34)
         Me.dtpBDEnd.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.dtpBDEnd.Name = "dtpBDEnd"
         Me.dtpBDEnd.ShowUpDown = True
@@ -200,16 +253,52 @@ Partial Class DG_DGMW
         'dtpBDStart
         '
         Me.dtpBDStart.CalendarFont = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dtpBDStart.CustomFormat = "hh:mm tt"
+        Me.dtpBDStart.CustomFormat = "hh:01 tt"
         Me.dtpBDStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtpBDStart.Location = New System.Drawing.Point(140, 26)
+        Me.dtpBDStart.Location = New System.Drawing.Point(147, 34)
         Me.dtpBDStart.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.dtpBDStart.Name = "dtpBDStart"
         Me.dtpBDStart.ShowUpDown = True
         Me.dtpBDStart.Size = New System.Drawing.Size(80, 21)
         Me.dtpBDStart.TabIndex = 0
         '
-        'DG_DGMW
+        'txtRetailCode
+        '
+        Me.txtRetailCode.Location = New System.Drawing.Point(147, 88)
+        Me.txtRetailCode.Name = "txtRetailCode"
+        Me.txtRetailCode.Size = New System.Drawing.Size(199, 21)
+        Me.txtRetailCode.TabIndex = 9
+        '
+        'txtTerminalNumber
+        '
+        Me.txtTerminalNumber.Location = New System.Drawing.Point(147, 115)
+        Me.txtTerminalNumber.Name = "txtTerminalNumber"
+        Me.txtTerminalNumber.Size = New System.Drawing.Size(199, 21)
+        Me.txtTerminalNumber.TabIndex = 10
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(28, 91)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(82, 15)
+        Me.Label7.TabIndex = 11
+        Me.Label7.Text = "Retail Code"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(28, 118)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(90, 15)
+        Me.Label8.TabIndex = 12
+        Me.Label8.Text = "Terminal No."
+        '
+        'DG_DGMGW
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -220,7 +309,7 @@ Partial Class DG_DGMW
         Me.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
-        Me.Name = "DG_DGMW"
+        Me.Name = "DG_DGMGW"
         Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Megawolrd Reporting Module"
@@ -229,6 +318,7 @@ Partial Class DG_DGMW
         Me.TabPage1.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
+        CType(Me.nudRetaillength, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -247,4 +337,12 @@ Partial Class DG_DGMW
     Friend WithEvents btnSave As Button
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents nudRetaillength As NumericUpDown
+    Friend WithEvents Label6 As Label
+    Friend WithEvents txtDateFormat As TextBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Label7 As Label
+    Friend WithEvents txtTerminalNumber As TextBox
+    Friend WithEvents txtRetailCode As TextBox
 End Class

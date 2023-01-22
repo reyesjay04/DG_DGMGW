@@ -2,47 +2,21 @@
 
 Public Class FieldTypeCls
     Property FieldName As String
-    Property FieldNumber As FieldType
     Property FieldValue As Object
     Property SetFieldValueType As FieldDataType
+    Property FieldNumber As String
+
+    Public Class BatchNumberSettings
+        Property BusinessDate As Date
+        Property NewBatchNumber As Integer
+        Property FieldType As String
+    End Class
     Enum FieldDataType
         isString
         isDouble
         isInteger
     End Enum
-    Enum FieldType
-        RETAILCODE
-        TERMINALNUMBER
-        BASEDATE
-        OLDACCTOTAL
-        NEWACCTOTAL
-        GROSSSALES
-        NONTAXABLESALES
-        OTHERDISCOUNTANDFREEITEMS
-        REFUND
-        TAXVAT
-        SERVICECHARGE
-        NETSALES
-        CREDITDEBITSALES
-        OTHERPAYMENTSALES
-        VOIDAMOUNT
-        CUSTOMERCOUNT
-        NUMBEROFSALESTRANSACTION
-        SALESTYPE
-        NETSALESAMOUNT
-    End Enum
-
-    Public Function GetFieldType() As String
-        Dim str As String = ""
-        Select Case FieldNumber
-            Case FieldType.RETAILCODE
-                str = "01"
-            Case FieldType.TERMINALNUMBER
-                str = "02"
-        End Select
-        Return str
-    End Function
-    Public Function GetFieldDataType(ByVal _fieldName As String) As FieldDataType
+    Public Function GetSalesFieldDataType(ByVal _fieldName As String) As FieldDataType
         Dim fldDt As FieldDataType
         Try
             Dim a As New DailySalesCls
@@ -70,6 +44,76 @@ Public Class FieldTypeCls
         End Try
         Return fldDt
     End Function
+
+    Public Function GetHourlyFieldDataType(ByVal _fieldName As String, Optional _mainClass As String = Nothing) As FieldDataType
+        Dim fldDt As FieldDataType
+        Try
+            Dim hourly As New HourlySalesCls
+            Dim hourlyData As New HourlySalesCls.HourlySales
+
+            Dim typeVal As String = ""
+
+            If _mainClass Is Nothing Then
+                Dim info() As PropertyInfo = hourly.GetType().GetProperties()
+                For Each b As PropertyInfo In info
+                    If b.Name = _fieldName Then
+                        typeVal = b.PropertyType.Name
+                        Exit For
+                    End If
+                Next
+            Else
+                Dim info() As PropertyInfo = hourlyData.GetType().GetProperties()
+                For Each b As PropertyInfo In info
+                    If b.Name = _fieldName Then
+                        typeVal = b.PropertyType.Name
+                        Exit For
+                    End If
+                Next
+            End If
+
+            Select Case typeVal
+                Case "Double"
+                    fldDt = FieldDataType.isDouble
+                Case "Integer"
+                    fldDt = FieldDataType.isInteger
+                Case Else
+                    fldDt = FieldDataType.isString
+            End Select
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+        Return fldDt
+    End Function
+
+    Public Function GetDiscountFieldDataType(ByVal _fieldName As String) As FieldDataType
+        Dim fldDt As FieldDataType
+        Try
+            Dim a As New DiscountDataCls
+            Dim info() As PropertyInfo = a.GetType().GetProperties()
+
+            Dim typeVal As String = ""
+
+            For Each b As PropertyInfo In info
+                If b.Name = _fieldName Then
+                    typeVal = b.PropertyType.Name
+                    Exit For
+                End If
+            Next
+
+            Select Case typeVal
+                Case "Double"
+                    fldDt = FieldDataType.isDouble
+                Case "Integer"
+                    fldDt = FieldDataType.isInteger
+                Case Else
+                    fldDt = FieldDataType.isString
+            End Select
+
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+        Return fldDt
+    End Function
     Public Function ConvertToDatatype() As String
         Dim strFormat As String = ""
         Select Case SetFieldValueType
@@ -88,7 +132,7 @@ Public Class FieldTypeCls
     Public Function GenLineData() As String
         Dim str As String = ""
         Try
-            str = GetFieldType() & ConvertToDatatype()
+            str = Me.FieldNumber & ConvertToDatatype()
         Catch ex As Exception
             MsgBox(ex.ToString)
         End Try

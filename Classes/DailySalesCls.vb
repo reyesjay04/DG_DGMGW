@@ -1,7 +1,7 @@
 ﻿Public Class DailySalesCls
-    Property RetailPartnerCode As String = "BBB"
+    Property RetailPartnerCode As String
     Property TerminalNumber As String
-    Property BaseDate As Date
+    Property BaseDate As String
     Property OldAccumulatedTotal As Double
     Property NewAccumulatedTotal As Double
     Property TotalGrossSalesAmount As Double
@@ -13,7 +13,7 @@
     Property TotalServiceChargeAmount As Double
     Property TotalNetSalesAmount As Double
     Property TotalCashSales As Double
-    Property TotalCreditDebitCardSales
+    Property TotalCreditDebitCardSales As Double
     Property TotalOtherPaymentSales As Double
     Property TotalVoidAmount As Double
     Property TotalCustomerCount As Double
@@ -21,6 +21,5 @@
     Property TotalNumberOfSalesTransaction As Integer
     Property SalesType As String
     Property NetSalesAmount As Double
-
 
 End Class

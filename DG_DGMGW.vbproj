@@ -5,12 +5,13 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{61C729C6-64A0-4CB4-A0DA-E266D2DF46F0}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
-    <StartupObject>DG_DGMW.My.MyApplication</StartupObject>
-    <RootNamespace>DG_DGMW</RootNamespace>
-    <AssemblyName>DG_DGMW</AssemblyName>
+    <OutputType>Library</OutputType>
+    <StartupObject>
+    </StartupObject>
+    <RootNamespace>DG_DGMGW</RootNamespace>
+    <AssemblyName>DG_DGMGW</AssemblyName>
     <FileAlignment>512</FileAlignment>
-    <MyType>WindowsForms</MyType>
+    <MyType>Windows</MyType>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -21,7 +22,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>DG_DGMW.xml</DocumentationFile>
+    <DocumentationFile>DG_DGMGW.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
@@ -32,7 +33,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>DG_DGMW.xml</DocumentationFile>
+    <DocumentationFile>DG_DGMGW.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
@@ -77,15 +78,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\DailySalesCls.vb" />
+    <Compile Include="Classes\DiscountDataCls.vb" />
     <Compile Include="Classes\FieldTypeCls.vb" />
-    <Compile Include="DG_DGMW.vb">
+    <Compile Include="Classes\HourlySalesCls.vb" />
+    <Compile Include="Classes\SettingsCls.vb" />
+    <Compile Include="DG_DGMGW.vb">
       <SubType>Form</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="DG_DGMW.Designer.vb">
-      <DependentUpon>DG_DGMW.vb</DependentUpon>
+    <Compile Include="DG_DGMGW.Designer.vb">
+      <DependentUpon>DG_DGMGW.vb</DependentUpon>
       <SubType>Form</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="ModDGMW.vb" />
+    <Compile Include="ModDGMGW.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -105,8 +111,9 @@
     <Compile Include="Classes\SalesFileTypeCls.vb" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="DG_DGMW.resx">
-      <DependentUpon>DG_DGMW.vb</DependentUpon>
+    <EmbeddedResource Include="DG_DGMGW.resx">
+      <DependentUpon>DG_DGMGW.vb</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -117,7 +124,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="DG_DGMW.config" />
+    <None Include="Config\DG_DGMGW.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -127,6 +136,12 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Documents\Visual Studio 2015\Projects\DGPOSCommon\POSCommon\POSCommon.vbproj">
+      <Project>{95518019-e954-47a7-82c6-2a25a6774c0b}</Project>
+      <Name>POSCommon</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
