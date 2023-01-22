@@ -5,7 +5,6 @@ C:\Users\jjrey\Source\Repos\DG_DGMGW\obj\Debug\DG_DGMGW.xml
 C:\Users\jjrey\Source\Repos\DG_DGMGW\bin\Debug\DG_DGMGW.pdb
 C:\Users\jjrey\Source\Repos\DG_DGMGW\bin\Debug\DG_DGMGW.xml
 C:\Users\jjrey\Source\Repos\DG_DGMGW\bin\Debug\POSCommon.dll
-C:\Users\jjrey\Source\Repos\DG_DGMGW\bin\Debug\BouncyCastle.Crypto.dll
 C:\Users\jjrey\Source\Repos\DG_DGMGW\bin\Debug\POSCommon.pdb
 C:\Users\jjrey\Source\Repos\DG_DGMGW\bin\Debug\POSCommon.xml
 C:\Users\jjrey\Source\Repos\DG_DGMGW\obj\Debug\DG_DGMGW.pdb

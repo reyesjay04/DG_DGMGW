@@ -17,13 +17,13 @@ Public Class SettingsCls
         serviceConfigName = "DG_DGMGW.config"
         Try
             ListOfMGWSettings = ModPosCommon.ReadTextCategories("MGW Settings")
-            BDFormat = ModPosCommon.GetItemValue("business_date_format", ListOfMGWSettings)
-            RetailLength = ModPosCommon.GetItemValue("retail_partnercode_length", ListOfMGWSettings)
-            RetailCode = ModPosCommon.GetItemValue("retail_partner_code", ListOfMGWSettings)
-            TerminalNo = ModPosCommon.GetItemValue("terminal_number", ListOfMGWSettings)
+            BDFormat = ModPosCommon.GetItemValue("business_date_format", "MMddyyyy", ListOfMGWSettings)
+            RetailLength = ModPosCommon.GetItemValue("retail_partnercode_length", "4", ListOfMGWSettings)
+            RetailCode = ModPosCommon.GetItemValue("retail_partner_code", "0", ListOfMGWSettings)
+            TerminalNo = ModPosCommon.GetItemValue("terminal_number", "0", ListOfMGWSettings)
 
-            Dim time_start = ModPosCommon.GetItemValue("business_hour_start", ListOfMGWSettings)
-            Dim time_end = ModPosCommon.GetItemValue("business_hour_end", ListOfMGWSettings)
+            Dim time_start = ModPosCommon.GetItemValue("business_hour_stsart", "10:00", ListOfMGWSettings)
+            Dim time_end = ModPosCommon.GetItemValue("business_hour_end", "11:00", ListOfMGWSettings)
 
             Try
                 BDStart = Date.ParseExact(time_start, "HH:mm", CultureInfo.InvariantCulture)
